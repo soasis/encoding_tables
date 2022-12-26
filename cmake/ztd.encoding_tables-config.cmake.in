@@ -1,0 +1,18 @@
+@PACKAGE_INIT@
+
+find_package(ztd.encoding_tables CONFIG REQUIRED)
+include(${CMAKE_CURRENT_LIST_DIR}/ztd.encoding_tables-targets.cmake)
+
+if (TARGET ztd.encoding_tables)
+	add_library(ztd::encoding_tables ALIAS ztd.encoding_tables)
+	get_target_property(ZTD_ENCODING_TABLES_INCLUDE_DIRS
+		ztd.encoding_tables INTERFACE_INCLUDE_DIRECTORIES)
+	set_and_check(ZTD_ENCODING_TABLES_INCLUDE_DIRS "${ZTD_ENCODING_TABLES_INCLUDE_DIRS}")
+endif()
+
+if(TARGET ztd::encoding_tables::single)
+	get_target_property(ZTD_ENCODING_TABLES_SINGLE_INCLUDE_DIRS
+		ztd.encoding_tables.single INTERFACE_INCLUDE_DIRECTORIES)
+	set_and_check(ZTD_ENCODING_TABLES_INCLUDE_DIRS "${ZTD_ENCODING_TABLES_SINGLE_INCLUDE_DIRS}")
+	set(ZTD_ENCODING_TABLES_LIBRARIES_SINGLE ztd::encoding_tables::single)
+endif()
