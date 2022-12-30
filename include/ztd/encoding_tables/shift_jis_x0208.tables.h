@@ -43,7 +43,7 @@ ZTD_EXTERN_C_I_ bool ztdc_shift_jis_x0208_code_point_to_index(
      uint_least32_t __lookup_code_point, size_t* __p_index) ZTD_NOEXCEPT_IF_CXX_I_;
 
 ZTD_EXTERN_C_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index16_code_point_t
-     ztd_shift_jis_x0208_index_code_point_map[7724]
+     ztd_et_shift_jis_x0208_index_code_point_map[7724]
      = { { 0, 0x3000 }, { 1, 0x3001 }, { 2, 0x3002 }, { 3, 0xFF0C }, { 4, 0xFF0E }, { 5, 0x30FB }, { 6, 0xFF1A },
 	       { 7, 0xFF1B }, { 8, 0xFF1F }, { 9, 0xFF01 }, { 10, 0x309B }, { 11, 0x309C }, { 12, 0x00B4 }, { 13, 0xFF40 },
 	       { 14, 0x00A8 }, { 15, 0xFF3E }, { 16, 0xFFE3 }, { 17, 0xFF3F }, { 18, 0x30FD }, { 19, 0x30FE },

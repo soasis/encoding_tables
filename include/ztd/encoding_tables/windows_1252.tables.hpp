@@ -51,9 +51,10 @@ namespace ztd { namespace et {
 	inline constexpr ::std::optional<::std::uint_least32_t> windows_1252_index_to_code_point(
 		::std::size_t __lookup_index_pointer) noexcept {
 		const ztd_et_index16 __lookup_index = static_cast<ztd_et_index16>(__lookup_index_pointer);
-		auto __it_and_last = ::ztd::ranges::lower_bound(::ztd::ranges::cbegin(ztd_windows_1252_index_code_point_map),
-			::ztd::ranges::cend(ztd_windows_1252_index_code_point_map), __lookup_index,
-			&::ztd::et::less_than_index16_target);
+		auto __first                        = ::ztd::ranges::cbegin(ztd_et_windows_1252_index_code_point_map);
+		auto __last                         = ::ztd::ranges::cend(ztd_et_windows_1252_index_code_point_map);
+		auto __it_and_last
+			= ::ztd::ranges::lower_bound(__first, __last, __lookup_index, &::ztd::et::less_than_index16_target);
 		if (__it_and_last.current == __it_and_last.last) {
 			return ::std::nullopt;
 		}
@@ -69,8 +70,9 @@ namespace ztd { namespace et {
 		auto __predicate = [&__lookup_code_point](const ztd_et_index16_code_point_t& __value) {
 			return __lookup_code_point == __value[1];
 		};
-		auto __it_and_last = ::ztd::ranges::find_if(::ztd::ranges::cbegin(ztd_windows_1252_index_code_point_map),
-			::ztd::ranges::cend(ztd_windows_1252_index_code_point_map), __predicate);
+		auto __first       = ::ztd::ranges::cbegin(ztd_et_windows_1252_index_code_point_map);
+		auto __last        = ::ztd::ranges::cend(ztd_et_windows_1252_index_code_point_map);
+		auto __it_and_last = ::ztd::ranges::find_if(__first, __last, __predicate);
 		if (__it_and_last.current == __it_and_last.last) {
 			return std::nullopt;
 		}

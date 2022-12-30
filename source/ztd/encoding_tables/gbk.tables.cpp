@@ -30,13 +30,13 @@
 
 #include <ztd/encoding_tables/version.hpp>
 
-#include <ztd/encoding_tables/gb18030.tables.h>
+#include <ztd/encoding_tables/gbk.tables.h>
 
-#include <ztd/encoding_tables/gb18030.tables.hpp>
+#include <ztd/encoding_tables/gbk.tables.hpp>
 
-ZTD_EXTERN_C_I_ bool ztdc_gb18030_ranges_index_to_code_point(
+ZTD_EXTERN_C_I_ bool ztdc_gbk_index_to_code_point(
      size_t __lookup_index_pointer, uint_least32_t* __p_code_point) ZTD_NOEXCEPT_IF_CXX_I_ {
-	auto __val = ztd::et::gb18030_ranges_index_to_code_point(__lookup_index_pointer);
+	auto __val = ztd::et::gbk_index_to_code_point(__lookup_index_pointer);
 	if (__val) {
 		*__p_code_point = *__val;
 		return true;
@@ -44,29 +44,9 @@ ZTD_EXTERN_C_I_ bool ztdc_gb18030_ranges_index_to_code_point(
 	return false;
 }
 
-ZTD_EXTERN_C_I_ bool ztdc_gb18030_ranges_code_point_to_index(
+ZTD_EXTERN_C_I_ bool ztdc_gbk_code_point_to_index(
      uint_least32_t __lookup_code_point, size_t* __p_index) ZTD_NOEXCEPT_IF_CXX_I_ {
-	auto __val = ztd::et::gb18030_ranges_code_point_to_index(__lookup_code_point);
-	if (__val) {
-		*__p_index = *__val;
-		return true;
-	}
-	return false;
-}
-
-ZTD_EXTERN_C_I_ bool ztdc_gb18030_index_to_code_point(
-     size_t __lookup_index_pointer, uint_least32_t* __p_code_point) ZTD_NOEXCEPT_IF_CXX_I_ {
-	auto __val = ztd::et::gb18030_index_to_code_point(__lookup_index_pointer);
-	if (__val) {
-		*__p_code_point = *__val;
-		return true;
-	}
-	return false;
-}
-
-ZTD_EXTERN_C_I_ bool ztdc_gb18030_code_point_to_index(
-     uint_least32_t __lookup_code_point, size_t* __p_index) ZTD_NOEXCEPT_IF_CXX_I_ {
-	auto __val = ztd::et::gb18030_code_point_to_index(__lookup_code_point);
+	auto __val = ztd::et::gbk_code_point_to_index(__lookup_code_point);
 	if (__val) {
 		*__p_index = *__val;
 		return true;

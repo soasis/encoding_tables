@@ -52,8 +52,8 @@ namespace ztd { namespace et {
 		::std::size_t __lookup_index_pointer) noexcept {
 		const ztd_et_index16 __lookup_index = static_cast<ztd_et_index16>(__lookup_index_pointer);
 		auto __it_and_last
-			= ::ztd::ranges::lower_bound(::ztd::ranges::cbegin(ztd_shift_jis_x0208_index_code_point_map),
-			     ::ztd::ranges::cend(ztd_shift_jis_x0208_index_code_point_map), __lookup_index,
+			= ::ztd::ranges::lower_bound(::ztd::ranges::cbegin(ztd_et_shift_jis_x0208_index_code_point_map),
+			     ::ztd::ranges::cend(ztd_et_shift_jis_x0208_index_code_point_map), __lookup_index,
 			     &::ztd::et::less_than_index16_target);
 		if (__it_and_last.current == __it_and_last.last) {
 			return ::std::nullopt;
@@ -70,8 +70,8 @@ namespace ztd { namespace et {
 		auto __predicate = [&__lookup_code_point](const ztd_et_index16_code_point_t& __value) {
 			return __lookup_code_point == __value[1] && !(__value[0] > 8272 && __value[0] < 8835);
 		};
-		auto __it_and_last = ::ztd::ranges::find_if(::ztd::ranges::cbegin(ztd_shift_jis_x0208_index_code_point_map),
-			::ztd::ranges::cend(ztd_shift_jis_x0208_index_code_point_map), __predicate);
+		auto __it_and_last = ::ztd::ranges::find_if(::ztd::ranges::cbegin(ztd_et_shift_jis_x0208_index_code_point_map),
+			::ztd::ranges::cend(ztd_et_shift_jis_x0208_index_code_point_map), __predicate);
 		if (__it_and_last.current == __it_and_last.last) {
 			return std::nullopt;
 		}

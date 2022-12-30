@@ -37,6 +37,7 @@
 
 #include <ztd/encoding_tables/gb18030.tables.h>
 #include <ztd/encoding_tables/predicates.hpp>
+#include <ztd/encoding_tables/generic.tables.hpp>
 #include <ztd/ranges/algorithm.hpp>
 #include <ztd/ranges/adl.hpp>
 
@@ -50,34 +51,56 @@
 namespace ztd { namespace et {
 	ZTD_ENCODING_TABLES_INLINE_ABI_NAMESPACE_OPEN_I_
 
-	inline constexpr ::std::optional<uint_least32_t> gb18030_index_to_code_point(
+	inline constexpr ::std::optional<uint32_t> gb18030_ranges_index_to_code_point(
 		::std::size_t __lookup_index_pointer) noexcept {
-		const ztd_et_index32 __lookup_index = static_cast<ztd_et_index32>(__lookup_index_pointer);
-		auto __it_and_last = ::ztd::ranges::lower_bound(::ztd::ranges::cbegin(ztd_gb18030_index_code_point_map),
-			::ztd::ranges::cend(ztd_gb18030_index_code_point_map), __lookup_index,
-			&::ztd::et::less_than_index32_target);
-		if (__it_and_last.current == __it_and_last.last) {
+		if ((__lookup_index_pointer > 39419 && __lookup_index_pointer < 189000) || __lookup_index_pointer > 1237575) {
 			return ::std::nullopt;
 		}
-		const ztd_et_index32_code_point_t& __index_and_codepoint = *__it_and_last.current;
-		if (__index_and_codepoint[0] != __lookup_index) {
+		if (__lookup_index_pointer == 7457) {
+			return U'\uE7C7';
+		}
+		::std::uint_least32_t lookup_index = static_cast<::std::uint_least32_t>(__lookup_index_pointer);
+		auto __last                        = ::ztd::ranges::cend(ztd_et_gb18030_ranges_index_code_point_map);
+		auto __it = ::std::lower_bound(::ztd::ranges::cbegin(ztd_et_gb18030_ranges_index_code_point_map), __last,
+			lookup_index, &::ztd::et::less_than_index32_target);
+		if (__it == __last) {
 			return ::std::nullopt;
 		}
-		return static_cast<uint_least32_t>(__index_and_codepoint[1]);
+		const ::ztd::et::index32_code_point_t& __index_and_codepoint = *__it;
+		const auto __offset                                          = __index_and_codepoint[0];
+		const auto __code_point_offset                               = __index_and_codepoint[1];
+		const uint_least32_t __code
+			= static_cast<uint_least32_t>((__code_point_offset + __lookup_index_pointer) - __offset);
+		return __code;
+	}
+
+	inline constexpr ::std::optional<::std::size_t> gb18030_ranges_code_point_to_index(
+		::std::uint_least32_t __lookup_code_point) noexcept {
+		if (__lookup_code_point == U'\uE7C7') {
+			return 7457;
+		}
+		auto __last = ::ztd::ranges::cend(ztd_et_gb18030_ranges_index_code_point_map);
+		auto __it   = ::std::lower_bound(::ztd::ranges::cbegin(ztd_et_gb18030_ranges_index_code_point_map), __last,
+			  __lookup_code_point, &::ztd::et::less_than_index32_target);
+		if (__it == __last) {
+			return ::std::nullopt;
+		}
+		const ::ztd::et::index32_code_point_t& __index_and_codepoint = *__it;
+		const auto __offset                                          = __index_and_codepoint[1];
+		const auto __index_offset                                    = __index_and_codepoint[0];
+		return static_cast<::std::size_t>((__index_offset + __lookup_code_point) - __offset);
+	}
+
+	inline constexpr ::std::optional<::std::uint_least32_t> gb18030_index_to_code_point(
+		::std::size_t __lookup_index_pointer) noexcept {
+		return ::ztd::et::generic_index_to_code_point<index32_code_point_t>(
+			ztd_gb18030_index_code_point_map, __lookup_index_pointer);
 	}
 
 	inline constexpr ::std::optional<::std::size_t> gb18030_code_point_to_index(
-		uint_least32_t __lookup_code_point) noexcept {
-		auto __predicate = [&__lookup_code_point](const ztd_et_index32_code_point_t& __value) {
-			return __lookup_code_point == __value[1];
-		};
-		auto __it_and_last = ::ztd::ranges::find_if(::ztd::ranges::cbegin(ztd_gb18030_index_code_point_map),
-			::ztd::ranges::cend(ztd_gb18030_index_code_point_map), __predicate);
-		if (__it_and_last.current == __it_and_last.last) {
-			return std::nullopt;
-		}
-		const ztd_et_index32_code_point_t& __index_and_codepoint = *__it_and_last.current;
-		return static_cast<::std::size_t>(__index_and_codepoint[0]);
+		::std::uint_least32_t __lookup_code_point) noexcept {
+		return ::ztd::et::generic_code_point_to_index<index32_code_point_t>(
+			ztd_gb18030_index_code_point_map, __lookup_code_point);
 	}
 
 	ZTD_ENCODING_TABLES_INLINE_ABI_NAMESPACE_CLOSE_I_

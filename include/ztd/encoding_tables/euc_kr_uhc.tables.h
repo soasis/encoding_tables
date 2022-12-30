@@ -43,7 +43,7 @@ ZTD_EXTERN_C_I_ bool ztdc_euc_kr_uhc_code_point_to_index(
      uint_least32_t __lookup_code_point, size_t* __p_index) ZTD_NOEXCEPT_IF_CXX_I_;
 
 ZTD_EXTERN_C_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index16_code_point_t
-     ztd_euc_kr_uhc_index_code_point_map[17048]
+     ztd_et_euc_kr_uhc_index_code_point_map[17048]
      = { { 0, 0xAC02 }, { 1, 0xAC03 }, { 2, 0xAC05 }, { 3, 0xAC06 }, { 4, 0xAC0B }, { 5, 0xAC0C }, { 6, 0xAC0D },
 	       { 7, 0xAC0E }, { 8, 0xAC0F }, { 9, 0xAC18 }, { 10, 0xAC1E }, { 11, 0xAC1F }, { 12, 0xAC21 }, { 13, 0xAC22 },
 	       { 14, 0xAC23 }, { 15, 0xAC25 }, { 16, 0xAC26 }, { 17, 0xAC27 }, { 18, 0xAC28 }, { 19, 0xAC29 },

@@ -42,7 +42,8 @@ ZTD_EXTERN_C_I_ bool ztdc_big5_hkscs_index_to_code_point(
 ZTD_EXTERN_C_I_ bool ztdc_big5_hkscs_code_point_to_index(
      uint_least32_t __lookup_code_point, size_t* __p_index) ZTD_NOEXCEPT_IF_CXX_I_;
 
-ZTD_EXTERN_C_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index32_code_point_t ztd_big5_hkscs_index_code_point_map[]
+ZTD_EXTERN_C_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index32_code_point_t
+     ztd_et_big5_hkscs_index_code_point_map[]
      = { { 942, 0x43F0 }, { 943, 0x4C32 }, { 944, 0x4603 }, { 945, 0x45A6 }, { 946, 0x4578 }, { 947, 0x27267 },
 	       { 948, 0x4D77 }, { 949, 0x45B3 }, { 950, 0x27CB1 }, { 951, 0x4CE2 }, { 952, 0x27CC5 }, { 953, 0x3B95 },
 	       { 954, 0x4736 }, { 955, 0x4744 }, { 956, 0x4C47 }, { 957, 0x4C40 }, { 958, 0x242BF }, { 959, 0x23617 },

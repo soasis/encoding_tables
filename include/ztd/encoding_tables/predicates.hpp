@@ -46,12 +46,17 @@
 namespace ztd { namespace et {
 	ZTD_ENCODING_TABLES_INLINE_ABI_NAMESPACE_OPEN_I_
 
-	inline constexpr bool less_than_index16_target(const index16_code_point_t& __value, index16_t __target) noexcept {
+	template <typename _IndexCodePointType, typename _IndexType = decltype(::std::declval<_IndexCodePointType>()[0])>
+	inline constexpr bool less_than_index_target(const _IndexCodePointType& __value, _IndexType __target) noexcept {
 		return __value[0] < __target;
 	}
 
+	inline constexpr bool less_than_index16_target(const index16_code_point_t& __value, index16_t __target) noexcept {
+		return ::ztd::et::less_than_index_target<index16_code_point_t>(__value, __target);
+	}
+
 	inline constexpr bool less_than_index32_target(const index32_code_point_t& __value, index32_t __target) noexcept {
-		return __value[0] < __target;
+		return ::ztd::et::less_than_index_target<index32_code_point_t>(__value, __target);
 	}
 
 	ZTD_ENCODING_TABLES_INLINE_ABI_NAMESPACE_CLOSE_I_

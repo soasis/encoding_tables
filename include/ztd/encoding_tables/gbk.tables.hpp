@@ -28,48 +28,47 @@
 //
 // ============================================================================ //
 
+#pragma once
+
+#ifndef ZTD_ENCODING_TABLES_GBK_TABLES_HPP
+#define ZTD_ENCODING_TABLES_GBK_TABLES_HPP
+
 #include <ztd/encoding_tables/version.hpp>
 
-#include <ztd/encoding_tables/gb18030.tables.h>
-
+#include <ztd/encoding_tables/gbk.tables.h>
+#include <ztd/encoding_tables/predicates.hpp>
+#include <ztd/encoding_tables/generic.tables.hpp>
 #include <ztd/encoding_tables/gb18030.tables.hpp>
+#include <ztd/ranges/algorithm.hpp>
+#include <ztd/ranges/adl.hpp>
 
-ZTD_EXTERN_C_I_ bool ztdc_gb18030_ranges_index_to_code_point(
-     size_t __lookup_index_pointer, uint_least32_t* __p_code_point) ZTD_NOEXCEPT_IF_CXX_I_ {
-	auto __val = ztd::et::gb18030_ranges_index_to_code_point(__lookup_index_pointer);
-	if (__val) {
-		*__p_code_point = *__val;
-		return true;
-	}
-	return false;
-}
+#include <cstddef>
+#include <optional>
+#include <iterator>
+#include <algorithm>
 
-ZTD_EXTERN_C_I_ bool ztdc_gb18030_ranges_code_point_to_index(
-     uint_least32_t __lookup_code_point, size_t* __p_index) ZTD_NOEXCEPT_IF_CXX_I_ {
-	auto __val = ztd::et::gb18030_ranges_code_point_to_index(__lookup_code_point);
-	if (__val) {
-		*__p_index = *__val;
-		return true;
-	}
-	return false;
-}
+#include <ztd/prologue.hpp>
 
-ZTD_EXTERN_C_I_ bool ztdc_gb18030_index_to_code_point(
-     size_t __lookup_index_pointer, uint_least32_t* __p_code_point) ZTD_NOEXCEPT_IF_CXX_I_ {
-	auto __val = ztd::et::gb18030_index_to_code_point(__lookup_index_pointer);
-	if (__val) {
-		*__p_code_point = *__val;
-		return true;
-	}
-	return false;
-}
+namespace ztd { namespace et {
+	ZTD_ENCODING_TABLES_INLINE_ABI_NAMESPACE_OPEN_I_
 
-ZTD_EXTERN_C_I_ bool ztdc_gb18030_code_point_to_index(
-     uint_least32_t __lookup_code_point, size_t* __p_index) ZTD_NOEXCEPT_IF_CXX_I_ {
-	auto __val = ztd::et::gb18030_code_point_to_index(__lookup_code_point);
-	if (__val) {
-		*__p_index = *__val;
-		return true;
+	inline constexpr ::std::optional<::std::uint_least32_t> gbk_index_to_code_point(
+		::std::size_t __lookup_index_pointer) noexcept {
+		return ::ztd::et::generic_index_to_code_point(
+			::ztd::span<const ::ztd::et::index32_code_point_t>(ztd_et_gb18030_ranges_index_code_point_map),
+			__lookup_index_pointer);
 	}
-	return false;
-}
+
+	inline constexpr ::std::optional<::std::size_t> gbk_code_point_to_index(
+		::std::uint_least32_t __lookup_code_point) noexcept {
+		return ::ztd::et::generic_code_point_to_index(
+			::ztd::span<const ::ztd::et::index32_code_point_t>(ztd_et_gb18030_ranges_index_code_point_map),
+			__lookup_code_point);
+	}
+
+	ZTD_ENCODING_TABLES_INLINE_ABI_NAMESPACE_CLOSE_I_
+}} // namespace ztd::et
+
+#include <ztd/epilogue.hpp>
+
+#endif

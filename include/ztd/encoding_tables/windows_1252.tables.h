@@ -43,7 +43,7 @@ ZTD_EXTERN_C_I_ bool ztdc_windows_1252_code_point_to_index(
      uint_least32_t __lookup_code_point, size_t* __p_index) ZTD_NOEXCEPT_IF_CXX_I_;
 
 ZTD_EXTERN_C_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index16_code_point_t
-     ztd_windows_1252_index_code_point_map[128]
+     ztd_et_windows_1252_index_code_point_map[128]
      = { { 0, 0x20AC }, { 1, 0x0081 }, { 2, 0x201A }, { 3, 0x0192 }, { 4, 0x201E }, { 5, 0x2026 }, { 6, 0x2020 },
 	       { 7, 0x2021 }, { 8, 0x02C6 }, { 9, 0x2030 }, { 10, 0x0160 }, { 11, 0x2039 }, { 12, 0x0152 }, { 13, 0x008D },
 	       { 14, 0x017D }, { 15, 0x008F }, { 16, 0x0090 }, { 17, 0x2018 }, { 18, 0x2019 }, { 19, 0x201C },
