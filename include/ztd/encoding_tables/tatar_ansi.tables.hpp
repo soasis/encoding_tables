@@ -30,13 +30,13 @@
 
 #pragma once
 
-#ifndef ZTD_ENCODING_TABLES_WINDOWS_1252_TABLES_HPP
-#define ZTD_ENCODING_TABLES_WINDOWS_1252_TABLES_HPP
+#ifndef ZTD_ENCODING_TABLES_TATAR_ANSI_TABLES_HPP
+#define ZTD_ENCODING_TABLES_TATAR_ANSI_TABLES_HPP
 
 #include <ztd/encoding_tables/version.hpp>
 
-#include <ztd/encoding_tables/windows_1252.tables.h>
-#include <ztd/encoding_tables/single_byte_high_lookup.hpp>
+#include <ztd/encoding_tables/tatar_ansi.tables.h>
+#include <ztd/encoding_tables/predicates.hpp>
 #include <ztd/ranges/algorithm.hpp>
 #include <ztd/ranges/adl.hpp>
 
@@ -48,16 +48,36 @@
 namespace ztd { namespace et {
 	ZTD_ENCODING_TABLES_INLINE_ABI_NAMESPACE_OPEN_I_
 
-	inline constexpr ::std::optional<::std::uint_least32_t> windows_1252_index_to_code_point(
+	inline constexpr ::std::optional<::std::uint_least32_t> tatar_ansi_index_to_code_point(
 		::std::size_t __lookup_index_pointer) noexcept {
-		return ::ztd::et::single_byte_high_index_to_code_point(
-			ztd_et_windows_1252_index_code_point_map, __lookup_index_pointer);
+		const ztd_et_index16 __lookup_index = static_cast<ztd_et_index16>(__lookup_index_pointer);
+		auto __first                        = ::ztd::ranges::cbegin(ztd_et_tatar_ansi_index_code_point_map);
+		auto __last                         = ::ztd::ranges::cend(ztd_et_tatar_ansi_index_code_point_map);
+		auto __it_and_last
+			= ::ztd::ranges::lower_bound(__first, __last, __lookup_index, &::ztd::et::less_than_index16_target);
+		if (__it_and_last.current == __it_and_last.last) {
+			return ::std::nullopt;
+		}
+		const ztd_et_index16_code_point_t& __index_and_codepoint = *__it_and_last.current;
+		if (__index_and_codepoint[0] != __lookup_index) {
+			return ::std::nullopt;
+		}
+		return static_cast<uint_least32_t>(__index_and_codepoint[1]);
 	}
 
-	inline constexpr ::std::optional<::std::size_t> windows_1252_code_point_to_index(
+	inline constexpr ::std::optional<::std::size_t> tatar_ansi_code_point_to_index(
 		::std::uint_least32_t __lookup_code_point) noexcept {
-		return ::ztd::et::single_byte_high_code_point_to_index(
-			ztd_et_windows_1252_index_code_point_map, __lookup_code_point);
+		auto __predicate = [&__lookup_code_point](const ztd_et_index16_code_point_t& __value) {
+			return __lookup_code_point == __value[1];
+		};
+		auto __first       = ::ztd::ranges::cbegin(ztd_et_tatar_ansi_index_code_point_map);
+		auto __last        = ::ztd::ranges::cend(ztd_et_tatar_ansi_index_code_point_map);
+		auto __it_and_last = ::ztd::ranges::find_if(__first, __last, __predicate);
+		if (__it_and_last.current == __it_and_last.last) {
+			return std::nullopt;
+		}
+		const ztd_et_index16_code_point_t& __index_and_codepoint = *__it_and_last.current;
+		return static_cast<::std::size_t>(__index_and_codepoint[0]);
 	}
 
 	ZTD_ENCODING_TABLES_INLINE_ABI_NAMESPACE_CLOSE_I_

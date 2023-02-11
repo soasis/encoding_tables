@@ -28,41 +28,28 @@
 //
 // ============================================================================ //
 
-#pragma once
-
-#ifndef ZTD_ENCODING_TABLES_WINDOWS_1252_TABLES_HPP
-#define ZTD_ENCODING_TABLES_WINDOWS_1252_TABLES_HPP
-
 #include <ztd/encoding_tables/version.hpp>
 
-#include <ztd/encoding_tables/windows_1252.tables.h>
-#include <ztd/encoding_tables/single_byte_high_lookup.hpp>
-#include <ztd/ranges/algorithm.hpp>
-#include <ztd/ranges/adl.hpp>
+#include <ztd/encoding_tables/windows_1251.tables.h>
 
-#include <cstddef>
-#include <optional>
+#include <ztd/encoding_tables/windows_1251.tables.hpp>
 
-#include <ztd/prologue.hpp>
-
-namespace ztd { namespace et {
-	ZTD_ENCODING_TABLES_INLINE_ABI_NAMESPACE_OPEN_I_
-
-	inline constexpr ::std::optional<::std::uint_least32_t> windows_1252_index_to_code_point(
-		::std::size_t __lookup_index_pointer) noexcept {
-		return ::ztd::et::single_byte_high_index_to_code_point(
-			ztd_et_windows_1252_index_code_point_map, __lookup_index_pointer);
+ZTD_EXTERN_C_I_ bool ztdc_windows_1251_index_to_code_point(
+     size_t __lookup_index_pointer, uint_least32_t* __p_code_point) ZTD_NOEXCEPT_IF_CXX_I_ {
+	auto __val = ztd::et::windows_1251_index_to_code_point(__lookup_index_pointer);
+	if (__val) {
+		*__p_code_point = *__val;
+		return true;
 	}
+	return false;
+}
 
-	inline constexpr ::std::optional<::std::size_t> windows_1252_code_point_to_index(
-		::std::uint_least32_t __lookup_code_point) noexcept {
-		return ::ztd::et::single_byte_high_code_point_to_index(
-			ztd_et_windows_1252_index_code_point_map, __lookup_code_point);
+ZTD_EXTERN_C_I_ bool ztdc_windows_1251_code_point_to_index(
+     uint_least32_t __lookup_code_point, size_t* __p_index) ZTD_NOEXCEPT_IF_CXX_I_ {
+	auto __val = ztd::et::windows_1251_code_point_to_index(__lookup_code_point);
+	if (__val) {
+		*__p_index = *__val;
+		return true;
 	}
-
-	ZTD_ENCODING_TABLES_INLINE_ABI_NAMESPACE_CLOSE_I_
-}} // namespace ztd::et
-
-#include <ztd/epilogue.hpp>
-
-#endif
+	return false;
+}

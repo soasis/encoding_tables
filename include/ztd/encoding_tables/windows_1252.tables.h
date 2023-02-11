@@ -30,8 +30,8 @@
 
 #pragma once
 
-#ifndef ZTD_ENCODING_TABLES_windows_1252_TABLES_H
-#define ZTD_ENCODING_TABLES_windows_1252_TABLES_H
+#ifndef ZTD_ENCODING_TABLES_WINDOWS_1252_TABLES_H
+#define ZTD_ENCODING_TABLES_WINDOWS_1252_TABLES_H
 
 #include <ztd/encoding_tables/version.h>
 
