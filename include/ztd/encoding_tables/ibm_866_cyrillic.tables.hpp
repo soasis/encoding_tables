@@ -30,12 +30,12 @@
 
 #pragma once
 
-#ifndef ZTD_ENCODING_TABLES_IBM_866_TABLES_HPP
-#define ZTD_ENCODING_TABLES_IBM_866_TABLES_HPP
+#ifndef ZTD_ENCODING_TABLES_IBM_866_CYRILLIC_TABLES_HPP
+#define ZTD_ENCODING_TABLES_IBM_866_CYRILLIC_TABLES_HPP
 
 #include <ztd/encoding_tables/version.hpp>
 
-#include <ztd/encoding_tables/ibm_866.tables.h>
+#include <ztd/encoding_tables/ibm_866_cyrillic.tables.h>
 #include <ztd/encoding_tables/single_byte_high_lookup.hpp>
 #include <ztd/ranges/algorithm.hpp>
 #include <ztd/ranges/adl.hpp>
@@ -48,16 +48,16 @@
 namespace ztd { namespace et {
 	ZTD_ENCODING_TABLES_INLINE_ABI_NAMESPACE_OPEN_I_
 
-	inline constexpr ::std::optional<::std::uint_least32_t> ibm_866_index_to_code_point(
+	inline constexpr ::std::optional<::std::uint_least32_t> ibm_866_cyrillic_index_to_code_point(
 		::std::size_t __lookup_index_pointer) noexcept {
 		return ::ztd::et::single_byte_high_index_to_code_point(
-			ztd_et_ibm_866_index_code_point_map, __lookup_index_pointer);
+			ztd_et_ibm_866_cyrillic_index_code_point_map, __lookup_index_pointer);
 	}
 
-	inline constexpr ::std::optional<::std::size_t> ibm_866_code_point_to_index(
+	inline constexpr ::std::optional<::std::size_t> ibm_866_cyrillic_code_point_to_index(
 		::std::uint_least32_t __lookup_code_point) noexcept {
 		return ::ztd::et::single_byte_high_code_point_to_index(
-			ztd_et_ibm_866_index_code_point_map, __lookup_code_point);
+			ztd_et_ibm_866_cyrillic_index_code_point_map, __lookup_code_point);
 	}
 
 	ZTD_ENCODING_TABLES_INLINE_ABI_NAMESPACE_CLOSE_I_

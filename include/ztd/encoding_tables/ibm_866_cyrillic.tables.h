@@ -30,20 +30,20 @@
 
 #pragma once
 
-#ifndef ZTD_ENCODING_TABLES_IBM_866_TABLES_H
-#define ZTD_ENCODING_TABLES_IBM_866_TABLES_H
+#ifndef ZTD_ENCODING_TABLES_IBM_866_CYRILLIC_TABLES_H
+#define ZTD_ENCODING_TABLES_IBM_866_CYRILLIC_TABLES_H
 
 #include <ztd/encoding_tables/version.h>
 
 #include <ztd/encoding_tables/table_types.h>
 
-ZTD_EXTERN_C_I_ bool ztdc_ibm_866_index_to_code_point(
+ZTD_EXTERN_C_I_ bool ztdc_ibm_866_cyrillic_index_to_code_point(
      size_t __lookup_index_pointer, uint_least32_t* __p_code_point) ZTD_NOEXCEPT_IF_CXX_I_;
-ZTD_EXTERN_C_I_ bool ztdc_ibm_866_code_point_to_index(
+ZTD_EXTERN_C_I_ bool ztdc_ibm_866_cyrillic_code_point_to_index(
      uint_least32_t __lookup_code_point, size_t* __p_index) ZTD_NOEXCEPT_IF_CXX_I_;
 
 ZTD_EXTERN_C_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index16_code_point_t
-     ztd_et_ibm_866_index_code_point_map[128]
+     ztd_et_ibm_866_cyrillic_index_code_point_map[128]
      = {
 	       { 0, 0x0410 },
 	       { 1, 0x0411 },

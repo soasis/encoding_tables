@@ -30,12 +30,12 @@
 
 #pragma once
 
-#ifndef ZTD_ENCODING_TABLES_KAZAKH_STRK1048_TABLES_HPP
-#define ZTD_ENCODING_TABLES_KAZAKH_STRK1048_TABLES_HPP
+#ifndef ZTD_ENCODING_TABLES_IBM_856_HEBREW_TABLES_HPP
+#define ZTD_ENCODING_TABLES_IBM_856_HEBREW_TABLES_HPP
 
 #include <ztd/encoding_tables/version.hpp>
 
-#include <ztd/encoding_tables/kazakh_strk1048.tables.h>
+#include <ztd/encoding_tables/ibm_856_hebrew.tables.h>
 #include <ztd/encoding_tables/predicates.hpp>
 #include <ztd/ranges/algorithm.hpp>
 #include <ztd/ranges/adl.hpp>
@@ -48,11 +48,11 @@
 namespace ztd { namespace et {
 	ZTD_ENCODING_TABLES_INLINE_ABI_NAMESPACE_OPEN_I_
 
-	inline constexpr ::std::optional<::std::uint_least32_t> kazakh_strk1048_index_to_code_point(
+	inline constexpr ::std::optional<::std::uint_least32_t> ibm_856_hebrew_index_to_code_point(
 		::std::size_t __lookup_index_pointer) noexcept {
 		const ztd_et_index16 __lookup_index = static_cast<ztd_et_index16>(__lookup_index_pointer);
-		auto __first                        = ::ztd::ranges::cbegin(ztd_et_kazakh_strk1048_index_code_point_map);
-		auto __last                         = ::ztd::ranges::cend(ztd_et_kazakh_strk1048_index_code_point_map);
+		auto __first                        = ::ztd::ranges::cbegin(ztd_et_ibm_856_hebrew_index_code_point_map);
+		auto __last                         = ::ztd::ranges::cend(ztd_et_ibm_856_hebrew_index_code_point_map);
 		auto __it_and_last
 			= ::ztd::ranges::lower_bound(__first, __last, __lookup_index, &::ztd::et::less_than_index16_target);
 		if (__it_and_last.current == __it_and_last.last) {
@@ -65,13 +65,13 @@ namespace ztd { namespace et {
 		return static_cast<uint_least32_t>(__index_and_codepoint[1]);
 	}
 
-	inline constexpr ::std::optional<::std::size_t> kazakh_strk1048_code_point_to_index(
+	inline constexpr ::std::optional<::std::size_t> ibm_856_hebrew_code_point_to_index(
 		::std::uint_least32_t __lookup_code_point) noexcept {
 		auto __predicate = [&__lookup_code_point](const ztd_et_index16_code_point_t& __value) {
 			return __lookup_code_point == __value[1];
 		};
-		auto __first       = ::ztd::ranges::cbegin(ztd_et_kazakh_strk1048_index_code_point_map);
-		auto __last        = ::ztd::ranges::cend(ztd_et_kazakh_strk1048_index_code_point_map);
+		auto __first       = ::ztd::ranges::cbegin(ztd_et_ibm_856_hebrew_index_code_point_map);
+		auto __last        = ::ztd::ranges::cend(ztd_et_ibm_856_hebrew_index_code_point_map);
 		auto __it_and_last = ::ztd::ranges::find_if(__first, __last, __predicate);
 		if (__it_and_last.current == __it_and_last.last) {
 			return std::nullopt;
