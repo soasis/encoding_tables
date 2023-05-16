@@ -54,11 +54,11 @@ namespace ztd { namespace et {
 		auto __first                        = ::ztd::ranges::cbegin(ztd_et_atari_st_index_code_point_map);
 		auto __last                         = ::ztd::ranges::cend(ztd_et_atari_st_index_code_point_map);
 		auto __it_and_last
-			= ::ztd::ranges::lower_bound(__first, __last, __lookup_index, &::ztd::et::less_than_index16_target);
+			= ::ztd::ranges::lower_bound(__first, __last, __lookup_index, &::ztd::et::less_than_index32_target);
 		if (__it_and_last.current == __it_and_last.last) {
 			return ::std::nullopt;
 		}
-		const ztd_et_index16_code_point_t& __index_and_codepoint = *__it_and_last.current;
+		const ztd_et_index32_code_point_t& __index_and_codepoint = *__it_and_last.current;
 		if (__index_and_codepoint[0] != __lookup_index) {
 			return ::std::nullopt;
 		}
@@ -67,7 +67,7 @@ namespace ztd { namespace et {
 
 	inline constexpr ::std::optional<::std::size_t> atari_st_code_point_to_index(
 		::std::uint_least32_t __lookup_code_point) noexcept {
-		auto __predicate = [&__lookup_code_point](const ztd_et_index16_code_point_t& __value) {
+		auto __predicate = [&__lookup_code_point](const ztd_et_index32_code_point_t& __value) {
 			return __lookup_code_point == __value[1];
 		};
 		auto __first       = ::ztd::ranges::cbegin(ztd_et_atari_st_index_code_point_map);
@@ -76,7 +76,7 @@ namespace ztd { namespace et {
 		if (__it_and_last.current == __it_and_last.last) {
 			return std::nullopt;
 		}
-		const ztd_et_index16_code_point_t& __index_and_codepoint = *__it_and_last.current;
+		const ztd_et_index32_code_point_t& __index_and_codepoint = *__it_and_last.current;
 		return static_cast<::std::size_t>(__index_and_codepoint[0]);
 	}
 
