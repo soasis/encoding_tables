@@ -51,12 +51,32 @@ namespace ztd { namespace et {
 		return __value[0] < __target;
 	}
 
+	template <typename _IndexCodePointType, typename _IndexType = decltype(::std::declval<_IndexCodePointType>()[0])>
+	inline constexpr bool less_than_code_point_target(
+		const _IndexCodePointType& __value, _IndexType __target) noexcept {
+		return __value[1] < __target;
+	}
+
+	inline constexpr bool less_than_index8_target(const index8_code_point_t& __value, index16_t __target) noexcept {
+		return ::ztd::et::less_than_index_target<index8_code_point_t>(__value, __target);
+	}
+
 	inline constexpr bool less_than_index16_target(const index16_code_point_t& __value, index16_t __target) noexcept {
 		return ::ztd::et::less_than_index_target<index16_code_point_t>(__value, __target);
 	}
 
 	inline constexpr bool less_than_index32_target(const index32_code_point_t& __value, index32_t __target) noexcept {
 		return ::ztd::et::less_than_index_target<index32_code_point_t>(__value, __target);
+	}
+
+	inline constexpr bool less_than_code_point16_target(
+		const index16_code_point_t& __value, index16_t __target) noexcept {
+		return ::ztd::et::less_than_code_point_target<index16_code_point_t>(__value, __target);
+	}
+
+	inline constexpr bool less_than_code_point32_target(
+		const index32_code_point_t& __value, index32_t __target) noexcept {
+		return ::ztd::et::less_than_code_point_target<index32_code_point_t>(__value, __target);
 	}
 
 	ZTD_ENCODING_TABLES_INLINE_ABI_NAMESPACE_CLOSE_I_

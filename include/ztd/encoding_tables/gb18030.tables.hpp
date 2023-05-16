@@ -59,13 +59,15 @@ namespace ztd { namespace et {
 		if (__lookup_index_pointer == 7457) {
 			return U'\uE7C7';
 		}
-		::std::uint_least32_t lookup_index = static_cast<::std::uint_least32_t>(__lookup_index_pointer);
-		auto __last                        = ::ztd::ranges::cend(ztd_et_gb18030_ranges_index_code_point_map);
+		::std::uint_least32_t __lookup_index = static_cast<::std::uint_least32_t>(__lookup_index_pointer);
+		auto __last                          = ::ztd::ranges::cend(ztd_et_gb18030_ranges_index_code_point_map);
+		auto __first                         = ::ztd::ranges::cbegin(ztd_et_gb18030_ranges_index_code_point_map);
 		auto __it = ::std::lower_bound(::ztd::ranges::cbegin(ztd_et_gb18030_ranges_index_code_point_map), __last,
-			lookup_index, &::ztd::et::less_than_index32_target);
-		if (__it == __last) {
+			__lookup_index, &::ztd::et::less_than_index32_target);
+		if (__it == __first) {
 			return ::std::nullopt;
 		}
+		--__it;
 		const ::ztd::et::index32_code_point_t& __index_and_codepoint = *__it;
 		const auto __offset                                          = __index_and_codepoint[0];
 		const auto __code_point_offset                               = __index_and_codepoint[1];
@@ -79,12 +81,14 @@ namespace ztd { namespace et {
 		if (__lookup_code_point == U'\uE7C7') {
 			return 7457;
 		}
-		auto __last = ::ztd::ranges::cend(ztd_et_gb18030_ranges_index_code_point_map);
-		auto __it   = ::std::lower_bound(::ztd::ranges::cbegin(ztd_et_gb18030_ranges_index_code_point_map), __last,
-			  __lookup_code_point, &::ztd::et::less_than_index32_target);
-		if (__it == __last) {
+		auto __first = ::ztd::ranges::cbegin(ztd_et_gb18030_ranges_index_code_point_map);
+		auto __last  = ::ztd::ranges::cend(ztd_et_gb18030_ranges_index_code_point_map);
+		auto __it
+			= ::std::lower_bound(__first, __last, __lookup_code_point, &::ztd::et::less_than_code_point32_target);
+		if (__it == __first) {
 			return ::std::nullopt;
 		}
+		--__it;
 		const ::ztd::et::index32_code_point_t& __index_and_codepoint = *__it;
 		const auto __offset                                          = __index_and_codepoint[1];
 		const auto __index_offset                                    = __index_and_codepoint[0];

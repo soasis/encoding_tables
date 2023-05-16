@@ -44,6 +44,8 @@
 namespace ztd { namespace et {
 	ZTD_ENCODING_TABLES_INLINE_ABI_NAMESPACE_OPEN_I_
 
+	using index8_t             = ztd_et_index8;
+	using index8_code_point_t  = index8_t[2];
 	using index16_t            = ztd_et_index16;
 	using index16_code_point_t = index16_t[2];
 	using index32_t            = ztd_et_index32;

@@ -43,7 +43,7 @@ ZTD_EXTERN_C_I_ bool ztdc_windows_874_code_point_to_index(
      uint_least32_t __lookup_code_point, size_t* __p_index) ZTD_NOEXCEPT_IF_CXX_I_;
 
 ZTD_EXTERN_C_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index16_code_point_t
-     ztd_et_windows_874_index_code_point_map[128]
+     ztd_et_windows_874_index_code_point_map[]
      = {
 	       { (0x80 - 0x80), 0x20AC },
 	       { (0x81 - 0x80), 0xFFFF },

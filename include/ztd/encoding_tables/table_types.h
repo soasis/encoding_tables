@@ -44,6 +44,9 @@
 #include <cstdint>
 #endif
 
+typedef uint_least8_t ztd_et_index8;
+typedef ztd_et_index8 ztd_et_index8_code_point_t[2];
+
 typedef uint_least16_t ztd_et_index16;
 typedef ztd_et_index16 ztd_et_index16_code_point_t[2];
 

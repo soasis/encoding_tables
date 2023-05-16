@@ -40,6 +40,7 @@
 
 #include <ztd/encoding_tables/predicates.hpp>
 
+#include <ztd/idk/charN_t.hpp>
 #include <ztd/idk/type_traits.hpp>
 #include <ztd/ranges/algorithm.hpp>
 #include <ztd/ranges/adl.hpp>
@@ -52,7 +53,7 @@
 namespace ztd { namespace et {
 	ZTD_ENCODING_TABLES_INLINE_ABI_NAMESPACE_OPEN_I_
 
-	template <char32_t _FailureCodePoint = 0xFFFFu, typename _Table>
+	template <ztd_char32_t _FailureCodePoint = 0xFFFFu, typename _Table>
 	inline constexpr ::std::optional<::std::uint_least32_t> single_byte_high_index_to_code_point(
 		_Table& __table, ::std::size_t __lookup_index_pointer) noexcept {
 		// standard lookup table
@@ -78,7 +79,7 @@ namespace ztd { namespace et {
 		return static_cast<uint_least32_t>(__index_and_codepoint[1]);
 	}
 
-	template <char32_t _FailureCodePoint = 0xFFFFu, typename _Table>
+	template <ztd_char32_t _FailureCodePoint = 0xFFFFu, typename _Table>
 	inline constexpr ::std::optional<::std::size_t> single_byte_high_code_point_to_index(
 		const _Table& __table, ::std::uint_least32_t __lookup_code_point) noexcept {
 		auto __first            = ::ztd::ranges::cbegin(__table);
