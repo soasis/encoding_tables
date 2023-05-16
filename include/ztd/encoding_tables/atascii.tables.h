@@ -7,7 +7,7 @@
 // Commercial License Usage
 // Licensees holding valid commercial ztd.encoding_tables licenses may use
 // this file in accordance with the commercial license agreement provided
-// with the Software or, 0xalternatively, in accordance with the terms
+// with the Software or, alternatively, in accordance with the terms
 // contained in a written agreement between you and Shepherd's Oasis, LLC.
 // For licensing terms and conditions see your agreement. For
 // further information contact opensource@soasis.org.
@@ -22,7 +22,7 @@
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, 0xeither express or implied.
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
