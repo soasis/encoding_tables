@@ -42,8 +42,9 @@ ZTD_EXTERN_C_I_ bool ztdc_kamenicky_index_to_code_point(
 ZTD_EXTERN_C_I_ bool ztdc_kamenicky_code_point_to_index(
      uint_least32_t __lookup_code_point, size_t* __p_index) ZTD_NOEXCEPT_IF_CXX_I_;
 
-ZTD_EXTERN_C_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index16_code_point_t ztd_et_kamenicky_index_code_point_map[]
-     = {
+ZTD_ENCODING_TABLES_EXTERN_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index16_code_point_t ztd_et_kamenicky_index_code_point_map[256]
+     #if ZTD_IS_ON(ZTD_ENCODING_TABLES_DEFINITION_IS_CONSTEXPR)
+= {
 	       { 0x00, 0x0000 },
 	       { 0x01, 0x0001 },
 	       { 0x02, 0x0002 },
@@ -301,5 +302,8 @@ ZTD_EXTERN_C_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index16_code_point_t
 	       { 0xfe, 0x25a0 },
 	       { 0xff, 0x00a0 },
        };
+#else
+;
+#endif
 
 #endif

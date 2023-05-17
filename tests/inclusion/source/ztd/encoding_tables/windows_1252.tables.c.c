@@ -29,3 +29,7 @@
 // ============================================================================ //
 
 #include <ztd/encoding_tables/windows_1252.tables.h>
+
+#if ZTD_IS_ON(ZTD_CXX)
+#error "no"
+#endif

@@ -141,8 +141,8 @@ file(GLOB_RECURSE ztd.encoding_tables.includes
 )
 file(GLOB_RECURSE ztd.encoding_tables.sources
 	CONFIGURE_DEPENDS
-	source/ztd/encoding_tables/**.cpp
-	source/ztd/encoding_tables/**.c
+	source/**.cpp
+	source/**.c
 )
 
 add_library(ztd.encoding_tables ${ztd.encoding_tables.sources})

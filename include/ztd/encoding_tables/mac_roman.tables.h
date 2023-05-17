@@ -42,8 +42,10 @@ ZTD_EXTERN_C_I_ bool ztdc_mac_roman_index_to_code_point(
 ZTD_EXTERN_C_I_ bool ztdc_mac_roman_code_point_to_index(
      uint_least32_t __lookup_code_point, size_t* __p_index) ZTD_NOEXCEPT_IF_CXX_I_;
 
-ZTD_EXTERN_C_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index16_code_point_t ztd_et_mac_roman_index_code_point_map[]
-     = {
+ZTD_ENCODING_TABLES_EXTERN_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index16_code_point_t
+     ztd_et_mac_roman_index_code_point_map[128]
+     #if ZTD_IS_ON(ZTD_ENCODING_TABLES_DEFINITION_IS_CONSTEXPR)
+= {
 	       { 0, 0x00C4 },
 	       { 1, 0x00C5 },
 	       { 2, 0x00C7 },
@@ -174,5 +176,8 @@ ZTD_EXTERN_C_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index16_code_point_t
 	       { 127, 0x02C7 },
 
        };
+#else
+;
+#endif
 
 #endif

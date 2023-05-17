@@ -47,9 +47,10 @@ ZTD_EXTERN_C_I_ bool ztdc_petscii_shifted_index_to_code_point(
 ZTD_EXTERN_C_I_ bool ztdc_petscii_shifted_code_point_to_index(
      uint_least32_t __lookup_code_point, size_t* __p_index) ZTD_NOEXCEPT_IF_CXX_I_;
 
-ZTD_EXTERN_C_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index16_code_point_t
+ZTD_ENCODING_TABLES_EXTERN_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index16_code_point_t
      ztd_et_petscii_unshifted_index_code_point_map[256]
-     = {
+     #if ZTD_IS_ON(ZTD_ENCODING_TABLES_DEFINITION_IS_CONSTEXPR)
+= {
 	       { 0x00, 0xFFFF },
 	       { 0x01, 0xFFFF },
 	       { 0x02, 0xFFFF },
@@ -307,10 +308,14 @@ ZTD_EXTERN_C_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index16_code_point_t
 	       { 0xFE, 0xF137 },
 	       { 0xFF, 0x03C0 },
        };
+#else
+;
+#endif
 
-ZTD_EXTERN_C_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index16_code_point_t
+ZTD_ENCODING_TABLES_EXTERN_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index16_code_point_t
      ztd_et_petscii_shifted_index_code_point_map[256]
-     = {
+     #if ZTD_IS_ON(ZTD_ENCODING_TABLES_DEFINITION_IS_CONSTEXPR)
+= {
 	       { 0x00, 0xFFFF },
 	       { 0x01, 0xFFFF },
 	       { 0x02, 0xFFFF },
@@ -568,5 +573,8 @@ ZTD_EXTERN_C_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index16_code_point_t
 	       { 0xFE, 0xF137 },
 	       { 0xFF, 0x2592 },
        };
+#else
+;
+#endif
 
 #endif

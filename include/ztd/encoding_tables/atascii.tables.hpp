@@ -50,7 +50,7 @@ namespace ztd { namespace et {
 
 	inline constexpr ::std::optional<::std::uint_least32_t> atascii_index_to_code_point(
 		::std::size_t __lookup_index_pointer) noexcept {
-		const ztd_et_index16 __lookup_index = static_cast<ztd_et_index32>(__lookup_index_pointer);
+		const ztd_et_index32 __lookup_index = static_cast<ztd_et_index32>(__lookup_index_pointer);
 		auto __first                        = ::ztd::ranges::cbegin(ztd_et_atascii_index_code_point_map);
 		auto __last                         = ::ztd::ranges::cend(ztd_et_atascii_index_code_point_map);
 		auto __it_and_last

@@ -42,8 +42,9 @@ ZTD_EXTERN_C_I_ bool ztdc_windows_1256_index_to_code_point(
 ZTD_EXTERN_C_I_ bool ztdc_windows_1256_code_point_to_index(
      uint_least32_t __lookup_code_point, size_t* __p_index) ZTD_NOEXCEPT_IF_CXX_I_;
 
-ZTD_EXTERN_C_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index16_code_point_t
-     ztd_et_windows_1256_index_code_point_map[]
+ZTD_ENCODING_TABLES_EXTERN_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index16_code_point_t
+     ztd_et_windows_1256_index_code_point_map[128]
+#if ZTD_IS_ON(ZTD_ENCODING_TABLES_DEFINITION_IS_CONSTEXPR)
      = {
 	       { (0x80 - 0x80), 0x20AC },
 	       { (0x81 - 0x80), 0x067E },
@@ -173,7 +174,9 @@ ZTD_EXTERN_C_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index16_code_point_t
 	       { (0xFD - 0x80), 0x200E },
 	       { (0xFE - 0x80), 0x200F },
 	       { (0xFF - 0x80), 0x06D2 },
-
        };
+#else
+     ;
+#endif
 
 #endif

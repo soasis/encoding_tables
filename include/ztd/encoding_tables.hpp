@@ -34,11 +34,57 @@
 #define ZTD_ENCODING_TABLES_HPP
 
 #include <ztd/encoding_tables/version.hpp>
-#include <ztd/encoding_tables/table_types.hpp>
+
+#include <ztd/encoding_tables/atari_st.tables.hpp>
+#include <ztd/encoding_tables/atascii.tables.hpp>
 #include <ztd/encoding_tables/big5_hkscs.tables.hpp>
-#include <ztd/encoding_tables/euc_kr.tables.hpp>
+#include <ztd/encoding_tables/euc_kr_uhc.tables.hpp>
 #include <ztd/encoding_tables/gb18030.tables.hpp>
+#include <ztd/encoding_tables/gbk.tables.hpp>
+#include <ztd/encoding_tables/generic.tables.hpp>
+#include <ztd/encoding_tables/ibm_424_hebrew_bulletin.tables.hpp>
+#include <ztd/encoding_tables/ibm_856_hebrew.tables.hpp>
+#include <ztd/encoding_tables/ibm_866_cyrillic.tables.hpp>
+#include <ztd/encoding_tables/ibm_1006_urdu.tables.hpp>
+#include <ztd/encoding_tables/iso_8859_1_1985.tables.hpp>
+#include <ztd/encoding_tables/iso_8859_1_1998.tables.hpp>
+#include <ztd/encoding_tables/iso_8859_2.tables.hpp>
+#include <ztd/encoding_tables/iso_8859_3.tables.hpp>
+#include <ztd/encoding_tables/iso_8859_4.tables.hpp>
+#include <ztd/encoding_tables/iso_8859_5.tables.hpp>
+#include <ztd/encoding_tables/iso_8859_6.tables.hpp>
+#include <ztd/encoding_tables/iso_8859_7.tables.hpp>
+#include <ztd/encoding_tables/iso_8859_8.tables.hpp>
+#include <ztd/encoding_tables/iso_8859_10.tables.hpp>
+#include <ztd/encoding_tables/iso_8859_13.tables.hpp>
+#include <ztd/encoding_tables/iso_8859_14.tables.hpp>
+#include <ztd/encoding_tables/iso_8859_15.tables.hpp>
+#include <ztd/encoding_tables/iso_8859_16.tables.hpp>
+#include <ztd/encoding_tables/kamenicky.tables.hpp>
+#include <ztd/encoding_tables/kazakh_strk1048.tables.hpp>
+#include <ztd/encoding_tables/koi8_r.tables.hpp>
+#include <ztd/encoding_tables/koi8_u.tables.hpp>
+#include <ztd/encoding_tables/mac_cyrillic.tables.hpp>
+#include <ztd/encoding_tables/mac_roman.tables.hpp>
+#include <ztd/encoding_tables/petscii.tables.hpp>
+#include <ztd/encoding_tables/predicates.hpp>
 #include <ztd/encoding_tables/shift_jis_x0208.tables.hpp>
+#include <ztd/encoding_tables/single_byte_high_lookup.hpp>
+#include <ztd/encoding_tables/table_types.hpp>
+#include <ztd/encoding_tables/tatar_ansi.tables.hpp>
+#include <ztd/encoding_tables/tatar_ascii.tables.hpp>
+#include <ztd/encoding_tables/windows_437_dos_latin_us.tables.hpp>
+#include <ztd/encoding_tables/windows_874.tables.hpp>
+#include <ztd/encoding_tables/windows_1250.tables.hpp>
+#include <ztd/encoding_tables/windows_1251.tables.hpp>
 #include <ztd/encoding_tables/windows_1252.tables.hpp>
+#include <ztd/encoding_tables/windows_1253.tables.hpp>
+#include <ztd/encoding_tables/windows_1254.tables.hpp>
+#include <ztd/encoding_tables/windows_1255.tables.hpp>
+#include <ztd/encoding_tables/windows_1256.tables.hpp>
+#include <ztd/encoding_tables/windows_1257.tables.hpp>
+#include <ztd/encoding_tables/windows_1258.tables.hpp>
+
+#include <ztd/encoding_tables.h>
 
 #endif

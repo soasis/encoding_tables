@@ -28,54 +28,10 @@
 //
 // ============================================================================ //
 
-#pragma once
+// Force the definition of every extern variable for C code.
+#define ZTD_ENCODING_TABLES_DEFINITION_IS_CONSTEXPR 1
+#define ZTD_ENCODING_TABLES_DEFINITION_IS_CONSTEXPR 1
 
-#ifndef ZTD_ENCODING_TABLES_VERSION_H
-#define ZTD_ENCODING_TABLES_VERSION_H
+#include <ztd/encoding_tables/version.h>
 
-#include <ztd/version.h>
-
-// clang-format off
-#if defined(ZTD_ENCODING_TABLES_BUILDING)
-	#if (ZTD_ENCODING_TABLES_BUILDING != 0)
-		#define ZTD_ENCODING_TABLES_BUILDING_I_ ZTD_ON
-	#else
-		#define ZTD_ENCODING_TABLES_BUILDING_I_ ZTD_OFF
-	#endif
-#else
-	#define ZTD_ENCODING_TABLES_BUILDING_I_ ZTD_DEFAULT_OFF
-#endif
-
-#if defined(ZTD_ENCODING_TABLES_DEFINITION_IS_CONSTEXPR)
-	#if (ZTD_ENCODING_TABLES_DEFINITION_IS_CONSTEXPR != 0)
-		#define ZTD_ENCODING_TABLES_DEFINITION_IS_CONSTEXPR_I_ ZTD_ON
-	#else
-		#define ZTD_ENCODING_TABLES_DEFINITION_IS_CONSTEXPR_I_ ZTD_OFF
-	#endif
-#elif ZTD_IS_ON(ZTD_CXX)
-	#define ZTD_ENCODING_TABLES_DEFINITION_IS_CONSTEXPR_I_ ZTD_DEFAULT_ON
-#else
-	#define ZTD_ENCODING_TABLES_DEFINITION_IS_CONSTEXPR_I_ ZTD_DEFAULT_OFF
-#endif
-
-#if ZTD_IS_ON(ZTD_ENCODING_TABLES_DEFINITION_IS_CONSTEXPR)
-	// C++
-	#define ZTD_ENCODING_TABLES_EXTERN_I_
-#elif ZTD_IS_ON(ZTD_ENCODING_TABLES_BUILDING)
-	#if ZTD_IS_ON(ZTD_CXX)
-		// C++
-		#define ZTD_ENCODING_TABLES_EXTERN_I_ extern "C"
-	#else
-		// normal
-		#define ZTD_ENCODING_TABLES_EXTERN_I_ extern
-	#endif
-#else
-	#if ZTD_IS_ON(ZTD_CXX)
-		#define ZTD_ENCODING_TABLES_EXTERN_I_ extern "C"
-	#else
-		#define ZTD_ENCODING_TABLES_EXTERN_I_ extern
-	#endif
-#endif // C++ or not
-// clang-format on
-
-#endif
+#include <ztd/encoding_tables.h>
