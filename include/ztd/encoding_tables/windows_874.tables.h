@@ -44,7 +44,7 @@ ZTD_EXTERN_C_I_ bool ztdc_windows_874_code_point_to_index(
 
 ZTD_ENCODING_TABLES_EXTERN_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index16_code_point_t
      ztd_et_windows_874_index_code_point_map[128]
-     #if ZTD_IS_ON(ZTD_ENCODING_TABLES_DEFINITION_IS_CONSTEXPR)
+#if ZTD_IS_ON(ZTD_ENCODING_TABLES_DEFINITION_IS_CONSTEXPR)
 = {
 	       { (0x80 - 0x80), 0x20AC },
 	       { (0x81 - 0x80), 0xFFFF },

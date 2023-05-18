@@ -44,7 +44,7 @@ ZTD_EXTERN_C_I_ bool ztdc_atascii_code_point_to_index(
 
 ZTD_ENCODING_TABLES_EXTERN_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index32_code_point_t
      ztd_et_atascii_index_code_point_map[256]
-     #if ZTD_IS_ON(ZTD_ENCODING_TABLES_DEFINITION_IS_CONSTEXPR)
+#if ZTD_IS_ON(ZTD_ENCODING_TABLES_DEFINITION_IS_CONSTEXPR)
 = {
 	       { 0, 0x2665 },
 	       { 1, 0x251C },

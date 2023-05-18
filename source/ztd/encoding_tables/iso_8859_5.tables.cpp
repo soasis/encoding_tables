@@ -30,13 +30,13 @@
 
 #include <ztd/encoding_tables/version.hpp>
 
-#include <ztd/encoding_tables/iso_8859_2.tables.h>
+#include <ztd/encoding_tables/iso_8859_5.tables.h>
 
-#include <ztd/encoding_tables/iso_8859_2.tables.hpp>
+#include <ztd/encoding_tables/iso_8859_5.tables.hpp>
 
-ZTD_EXTERN_C_I_ bool ztdc_iso_8859_2_index_to_code_point(
+ZTD_EXTERN_C_I_ bool ztdc_iso_8859_5_index_to_code_point(
      size_t __lookup_index_pointer, uint_least32_t* __p_code_point) ZTD_NOEXCEPT_IF_CXX_I_ {
-	auto __val = ztd::et::iso_8859_2_index_to_code_point(__lookup_index_pointer);
+	auto __val = ztd::et::iso_8859_5_index_to_code_point(__lookup_index_pointer);
 	if (__val) {
 		*__p_code_point = *__val;
 		return true;
@@ -44,9 +44,9 @@ ZTD_EXTERN_C_I_ bool ztdc_iso_8859_2_index_to_code_point(
 	return false;
 }
 
-ZTD_EXTERN_C_I_ bool ztdc_iso_8859_2_code_point_to_index(
+ZTD_EXTERN_C_I_ bool ztdc_iso_8859_5_code_point_to_index(
      uint_least32_t __lookup_code_point, size_t* __p_index) ZTD_NOEXCEPT_IF_CXX_I_ {
-	auto __val = ztd::et::iso_8859_2_code_point_to_index(__lookup_code_point);
+	auto __val = ztd::et::iso_8859_5_code_point_to_index(__lookup_code_point);
 	if (__val) {
 		*__p_index = *__val;
 		return true;

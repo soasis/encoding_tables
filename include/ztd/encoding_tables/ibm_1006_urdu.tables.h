@@ -44,7 +44,7 @@ ZTD_EXTERN_C_I_ bool ztdc_ibm_1006_urdu_code_point_to_index(
 
 ZTD_ENCODING_TABLES_EXTERN_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index16_code_point_t
      ztd_et_ibm_1006_urdu_index_code_point_map[256]
-     #if ZTD_IS_ON(ZTD_ENCODING_TABLES_DEFINITION_IS_CONSTEXPR)
+#if ZTD_IS_ON(ZTD_ENCODING_TABLES_DEFINITION_IS_CONSTEXPR)
 = {
 	       { 0x00, 0x0000 },
 	       { 0x01, 0x0001 },
