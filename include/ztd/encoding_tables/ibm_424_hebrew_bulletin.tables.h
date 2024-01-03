@@ -1,7 +1,7 @@
 // =============================================================================
 //
 // ztd.encoding_tables
-// Copyright © 2022-2023 JeanHeyd "ThePhD" Meneide and Shepherd's Oasis, LLC
+// Copyright © JeanHeyd "ThePhD" Meneide and Shepherd's Oasis, LLC
 // Contact: opensource@soasis.org
 //
 // Commercial License Usage
@@ -45,7 +45,7 @@ ZTD_EXTERN_C_I_ bool ztdc_ibm_424_hebrew_bulletin_code_point_to_index(
 ZTD_ENCODING_TABLES_EXTERN_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index16_code_point_t
      ztd_et_ibm_424_hebrew_bulletin_index_code_point_map[256]
 #if ZTD_IS_ON(ZTD_ENCODING_TABLES_DEFINITION_IS_CONSTEXPR)
-= {
+     = {
 	       { 0x00, 0x0000 },
 	       { 0x01, 0x0001 },
 	       { 0x02, 0x0002 },
@@ -304,7 +304,7 @@ ZTD_ENCODING_TABLES_EXTERN_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index1
 	       { 0xFF, 0x009F },
        };
 #else
-;
+     ;
 #endif
 
 #endif

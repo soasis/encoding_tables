@@ -1,7 +1,7 @@
 // =============================================================================
 //
 // ztd.encoding_tables
-// Copyright © 2022-2023 JeanHeyd "ThePhD" Meneide and Shepherd's Oasis, LLC
+// Copyright © JeanHeyd "ThePhD" Meneide and Shepherd's Oasis, LLC
 // Contact: opensource@soasis.org
 //
 // Commercial License Usage
@@ -45,7 +45,7 @@ ZTD_EXTERN_C_I_ bool ztdc_tatar_ascii_code_point_to_index(
 ZTD_ENCODING_TABLES_EXTERN_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index16_code_point_t
      ztd_et_tatar_ascii_index_code_point_map[128]
 #if ZTD_IS_ON(ZTD_ENCODING_TABLES_DEFINITION_IS_CONSTEXPR)
-= {
+     = {
 	       { 0x00, 0x0401 },
 	       { 0x01, 0x0451 },
 	       { 0x02, 0x04D8 },
@@ -176,7 +176,7 @@ ZTD_ENCODING_TABLES_EXTERN_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index1
 	       { 127, 0x00A0 },
        };
 #else
-;
+     ;
 #endif
 
 #endif

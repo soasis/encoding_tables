@@ -1,7 +1,7 @@
 // =============================================================================
 //
 // ztd.encoding_tables
-// Copyright © 2022-2023 JeanHeyd "ThePhD" Meneide and Shepherd's Oasis, LLC
+// Copyright © JeanHeyd "ThePhD" Meneide and Shepherd's Oasis, LLC
 // Contact: opensource@soasis.org
 //
 // Commercial License Usage
@@ -45,7 +45,7 @@ ZTD_EXTERN_C_I_ bool ztdc_big5_hkscs_code_point_to_index(
 ZTD_ENCODING_TABLES_EXTERN_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index32_code_point_t
      ztd_et_big5_hkscs_index_code_point_map[18590]
 #if ZTD_IS_ON(ZTD_ENCODING_TABLES_DEFINITION_IS_CONSTEXPR)
-= {
+     = {
 	       { 942, 0x43F0 },
 	       { 943, 0x4C32 },
 	       { 944, 0x4603 },
@@ -18638,7 +18638,7 @@ ZTD_ENCODING_TABLES_EXTERN_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index3
 	       { 19781, 0x79D4 },
        };
 #else
-;
+     ;
 #endif
 
 #endif

@@ -1,7 +1,7 @@
 // =============================================================================
 //
 // ztd.encoding_tables
-// Copyright © 2022-2023 JeanHeyd "ThePhD" Meneide and Shepherd's Oasis, LLC
+// Copyright © JeanHeyd "ThePhD" Meneide and Shepherd's Oasis, LLC
 // Contact: opensource@soasis.org
 //
 // Commercial License Usage
@@ -70,8 +70,9 @@ namespace ztd { namespace et {
 		auto __predicate = [&__lookup_code_point](const ztd_et_index16_code_point_t& __value) {
 			return __lookup_code_point == __value[1] && !(__value[0] > 8272 && __value[0] < 8835);
 		};
-		auto __it_and_last = ::ztd::ranges::find_if(::ztd::ranges::cbegin(ztd_et_shift_jis_x0208_index_code_point_map),
-			::ztd::ranges::cend(ztd_et_shift_jis_x0208_index_code_point_map), __predicate);
+		auto __it_and_last
+			= ::ztd::ranges::find_if(::ztd::ranges::cbegin(ztd_et_shift_jis_x0208_index_code_point_map),
+			     ::ztd::ranges::cend(ztd_et_shift_jis_x0208_index_code_point_map), __predicate);
 		if (__it_and_last.current == __it_and_last.last) {
 			return std::nullopt;
 		}
