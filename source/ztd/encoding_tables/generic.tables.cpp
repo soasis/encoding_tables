@@ -38,7 +38,7 @@
 ZTD_EXTERN_C_I_ bool ztdc_generic_index32_to_code_point(size_t __index_to_code_point_map_size,
      const ztd_et_index32_code_point_t
           __index_to_code_point_map_arr[ZTD_STATIC_PTR_EXTENT_I_(__index_to_code_point_map_size)],
-     size_t __lookup_index_pointer, uint_least32_t* __p_code_point) ZTD_NOEXCEPT_IF_CXX_I_ {
+     size_t __lookup_index_pointer, uint_least32_t* __p_code_point) ZTD_USE(ZTD_NOEXCEPT_IF_CXX) {
 	const ::ztd::span<const ::ztd::et::index32_code_point_t> __index_code_point_map(
 	     __index_to_code_point_map_arr, __index_to_code_point_map_size);
 	auto __val = ztd::et::generic_index_to_code_point<::ztd::et::index32_code_point_t>(
@@ -53,7 +53,7 @@ ZTD_EXTERN_C_I_ bool ztdc_generic_index32_to_code_point(size_t __index_to_code_p
 ZTD_EXTERN_C_I_ bool ztdc_generic_code_point_to_index32(size_t __index_to_code_point_map_size,
      const ztd_et_index32_code_point_t
           __index_to_code_point_map_arr[ZTD_STATIC_PTR_EXTENT_I_(__index_to_code_point_map_size)],
-     uint_least32_t __lookup_code_point, size_t* __p_index) ZTD_NOEXCEPT_IF_CXX_I_ {
+     uint_least32_t __lookup_code_point, size_t* __p_index) ZTD_USE(ZTD_NOEXCEPT_IF_CXX) {
 	const ::ztd::span<const ::ztd::et::index32_code_point_t> __index_code_point_map(
 	     __index_to_code_point_map_arr, __index_to_code_point_map_size);
 	auto __val = ztd::et::generic_code_point_to_index<::ztd::et::index32_code_point_t>(
@@ -68,7 +68,7 @@ ZTD_EXTERN_C_I_ bool ztdc_generic_code_point_to_index32(size_t __index_to_code_p
 ZTD_EXTERN_C_I_ bool ztdc_generic_index16_to_code_point(size_t __index_to_code_point_map_size,
      const ztd_et_index16_code_point_t
           __index_to_code_point_map_arr[ZTD_STATIC_PTR_EXTENT_I_(__index_to_code_point_map_size)],
-     size_t __lookup_index_pointer, uint_least32_t* __p_code_point) ZTD_NOEXCEPT_IF_CXX_I_ {
+     size_t __lookup_index_pointer, uint_least32_t* __p_code_point) ZTD_USE(ZTD_NOEXCEPT_IF_CXX) {
 	const ::ztd::span<const ::ztd::et::index16_code_point_t> __index_code_point_map(
 	     __index_to_code_point_map_arr, __index_to_code_point_map_size);
 	auto __val = ztd::et::generic_index_to_code_point<::ztd::et::index16_code_point_t>(
@@ -82,7 +82,7 @@ ZTD_EXTERN_C_I_ bool ztdc_generic_index16_to_code_point(size_t __index_to_code_p
 ZTD_EXTERN_C_I_ bool ztdc_generic_code_point_to_index16(size_t __index_to_code_point_map_size,
      const ztd_et_index16_code_point_t
           __index_to_code_point_map_arr[ZTD_STATIC_PTR_EXTENT_I_(__index_to_code_point_map_size)],
-     uint_least32_t __lookup_code_point, size_t* __p_index) ZTD_NOEXCEPT_IF_CXX_I_ {
+     uint_least32_t __lookup_code_point, size_t* __p_index) ZTD_USE(ZTD_NOEXCEPT_IF_CXX) {
 	const ::ztd::span<const ::ztd::et::index16_code_point_t> __index_code_point_map(
 	     __index_to_code_point_map_arr, __index_to_code_point_map_size);
 	auto __val = ztd::et::generic_code_point_to_index<::ztd::et::index16_code_point_t>(

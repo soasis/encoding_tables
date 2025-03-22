@@ -37,10 +37,10 @@
 
 #include <ztd/encoding_tables/table_types.h>
 
-ZTD_EXTERN_C_I_ bool ztdc_atari_st_index_to_code_point(
-     size_t __lookup_index_pointer, uint_least32_t* __p_code_point) ZTD_NOEXCEPT_IF_CXX_I_;
-ZTD_EXTERN_C_I_ bool ztdc_atari_st_code_point_to_index(
-     uint_least32_t __lookup_code_point, size_t* __p_index) ZTD_NOEXCEPT_IF_CXX_I_;
+ZTD_EXTERN_C_I_ bool ztdc_atari_st_index_to_code_point(size_t __lookup_index_pointer, uint_least32_t* __p_code_point)
+     ZTD_USE(ZTD_NOEXCEPT_IF_CXX);
+ZTD_EXTERN_C_I_ bool ztdc_atari_st_code_point_to_index(uint_least32_t __lookup_code_point, size_t* __p_index)
+     ZTD_USE(ZTD_NOEXCEPT_IF_CXX);
 
 ZTD_ENCODING_TABLES_EXTERN_I_ ZTD_INLINE_CONSTEXPR_IF_CXX_I_ const ztd_et_index32_code_point_t ztd_et_atari_st_index_code_point_map[256]
 #if ZTD_IS_ON(ZTD_ENCODING_TABLES_DEFINITION_IS_CONSTEXPR)

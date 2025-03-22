@@ -35,7 +35,7 @@
 #include <ztd/encoding_tables/ibm_424_hebrew_bulletin.tables.hpp>
 
 ZTD_EXTERN_C_I_ bool ztdc_ibm_424_hebrew_bulletin_index_to_code_point(
-     size_t __lookup_index_pointer, uint_least32_t* __p_code_point) ZTD_NOEXCEPT_IF_CXX_I_ {
+     size_t __lookup_index_pointer, uint_least32_t* __p_code_point) ZTD_USE(ZTD_NOEXCEPT_IF_CXX) {
 	auto __val = ztd::et::ibm_424_hebrew_bulletin_index_to_code_point(__lookup_index_pointer);
 	if (__val) {
 		*__p_code_point = *__val;
@@ -45,7 +45,7 @@ ZTD_EXTERN_C_I_ bool ztdc_ibm_424_hebrew_bulletin_index_to_code_point(
 }
 
 ZTD_EXTERN_C_I_ bool ztdc_ibm_424_hebrew_bulletin_code_point_to_index(
-     uint_least32_t __lookup_code_point, size_t* __p_index) ZTD_NOEXCEPT_IF_CXX_I_ {
+     uint_least32_t __lookup_code_point, size_t* __p_index) ZTD_USE(ZTD_NOEXCEPT_IF_CXX) {
 	auto __val = ztd::et::ibm_424_hebrew_bulletin_code_point_to_index(__lookup_code_point);
 	if (__val) {
 		*__p_index = *__val;
