@@ -28,26 +28,6 @@
 #
 # ============================================================================ #
 
-# # Tests
-file(GLOB_RECURSE ztd.encoding_tables.tests.inclusion.sources
-	LIST_DIRECTORIES FALSE
-	CONFIGURE_DEPENDS
-	source/*.c source/*.cpp)
+include(GenerateInclusionTest)
 
-add_executable(ztd.encoding_tables.tests.inclusion ${ztd.encoding_tables.tests.inclusion.sources})
-target_compile_options(ztd.encoding_tables.tests.inclusion
-	PRIVATE
-	${--utf8-literal-encoding}
-	${--utf8-source-encoding}
-	${--disable-permissive}
-	${--updated-cpp-version-flag}
-	${--warn-pedantic}
-	${--warn-all}
-	${--warn-extra}
-	${--warn-errors})
-target_link_libraries(ztd.encoding_tables.tests.inclusion
-	PRIVATE
-	ztd::encoding_tables
-	${CMAKE_DL_LIBS}
-)
-add_test(NAME ztd.encoding_tables.tests.inclusion COMMAND ztd.encoding_tables.tests.inclusion)
+generate_inclusion_test(NAME "ztd.idk.tests.inclusion" BASE_DIRECTORY "../../../include" ROOTS "../../../include/ztd/idk" LINK_LIBRARIES ztd::encoding_tables)

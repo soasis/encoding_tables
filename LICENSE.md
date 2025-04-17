@@ -80,3 +80,19 @@ For licensing terms and conditions, see your agreement. For
 further information contact opensource@soasis.org.
 
 END OF TERMS AND CONDITIONS
+
+
+
+
+            COMMERCIAL LICENSE PROVISIONS
+
+ztd.encoding_tables
+Commerical License Usage
+Copyright © JeanHeyd "ThePhD" Meneide and Shepherd's Oasis, LLC
+Contact: opensource@soasis.org
+
+
+Licensees holding valid commercial ztd.idk licenses may use this file in accordance with the commercial license agreement provided with the Software or, alternatively, in accordance with the terms contained in a written agreement between you and Shepherd's Oasis, LLC. For licensing terms and conditions, see your agreement. For further information contact opensource@soasis.org.
+
+END OF TERMS AND CONDITIONS
+
