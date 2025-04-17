@@ -30,4 +30,7 @@
 
 include(GenerateInclusionTest)
 
-generate_inclusion_test(NAME "ztd.idk.tests.inclusion" BASE_DIRECTORY "../../../include" ROOTS "../../../include/ztd/idk" LINK_LIBRARIES ztd::encoding_tables)
+generate_inclusion_test(NAME "ztd.encoding_tables.tests.inclusion"
+	ROOTS "../../include"
+	LINK_LIBRARIES ztd::encoding_tables
+)

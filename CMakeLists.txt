@@ -179,7 +179,7 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "GNU" AND NOT CMAKE_CXX_COMPILER_VERSION VERSI
 	check_compiler_diagnostic(stringop-overread)
 	check_compiler_diagnostic(array-bounds)
 	target_compile_options(ztd.encoding_tables
-		PRIVATE
+		PUBLIC
 		${--allow-stringop-overflow}
 		${--allow-stringop-overread}
 		${--allow-array-bounds})
