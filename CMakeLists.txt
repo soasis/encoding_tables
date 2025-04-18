@@ -177,9 +177,10 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "GNU" AND NOT CMAKE_CXX_COMPILER_VERSION VERSI
 	#   https://gcc.gnu.org/bugzilla/show_bug.cgi?id=95353
 	target_compile_options(ztd.encoding_tables
 		PUBLIC
-		-Wstringop-overflow
-		-Wstringop-overread
-		-Warray-bounds
+		-Wno-stringop-overflow
+		-Wno-stringop-overread
+		-Wno-array-bounds
+	)
 endif()
 
 
