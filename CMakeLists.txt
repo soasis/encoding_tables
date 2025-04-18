@@ -166,7 +166,7 @@ if(ZTD_ENCODING_TABLES_IS_TOP_LEVEL_PROJECT)
 		${--warn-errors}
 	)
 endif()
-if (CMAKE_CXX_COMPILER_ID MATCHES "GNU" AND NOT CMAKE_CXX_COMPILER_VERSION VERSION_LESS 7.0 AND NOT CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 13.0)
+if (CMAKE_CXX_COMPILER_ID MATCHES "GNU" AND NOT CMAKE_CXX_COMPILER_VERSION VERSION_LESS 7.0 AND NOT CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 14.0)
 	# this stuff is, unfortunately, really poisonous and poorly implemented
 	# in these GCC versions
 	# (Wstringop-overflow) - [meta-bug] bogus/missing -Wstringop-overflow warnings
@@ -175,14 +175,11 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "GNU" AND NOT CMAKE_CXX_COMPILER_VERSION VERSI
 	#   https://gcc.gnu.org/bugzilla/show_bug.cgi?id=100395
 	# [10 Regression] spurious -Wstringop-overflow writing to a trailing array plus offset
 	#   https://gcc.gnu.org/bugzilla/show_bug.cgi?id=95353
-	check_compiler_diagnostic(stringop-overflow)
-	check_compiler_diagnostic(stringop-overread)
-	check_compiler_diagnostic(array-bounds)
 	target_compile_options(ztd.encoding_tables
 		PUBLIC
-		${--allow-stringop-overflow}
-		${--allow-stringop-overread}
-		${--allow-array-bounds})
+		-Wstringop-overflow
+		-Wstringop-overread
+		-Warray-bounds
 endif()
 
 
